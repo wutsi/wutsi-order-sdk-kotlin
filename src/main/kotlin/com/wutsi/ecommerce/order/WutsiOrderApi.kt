@@ -7,6 +7,7 @@ import feign.Headers
 import feign.Param
 import feign.RequestLine
 import kotlin.String
+import kotlin.Unit
 
 public interface WutsiOrderApi {
   @RequestLine("POST /v1/orders")
@@ -16,4 +17,8 @@ public interface WutsiOrderApi {
   @RequestLine("GET /v1/orders/{id}")
   @Headers(value=["Content-Type: application/json"])
   public fun getOrder(@Param("id") id: String): GetOrderResponse
+
+  @RequestLine("DELETE /v1/orders/{id}")
+  @Headers(value=["Content-Type: application/json"])
+  public fun cancelOrder(@Param("id") id: String): Unit
 }

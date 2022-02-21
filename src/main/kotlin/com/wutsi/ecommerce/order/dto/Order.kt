@@ -10,10 +10,12 @@ public data class Order(
   public val id: String = "",
   public val merchantId: Long = 0,
   public val accountId: Long = 0,
+  public val reservationId: Long? = null,
   public val status: String = "",
   public val totalPrice: Double = 0.0,
   public val currency: String = "",
   public val items: List<OrderItem> = emptyList(),
   public val created: OffsetDateTime = OffsetDateTime.now(),
-  public val updated: OffsetDateTime = OffsetDateTime.now()
+  public val updated: OffsetDateTime = OffsetDateTime.now(),
+  public val cancelled: OffsetDateTime? = null
 )
