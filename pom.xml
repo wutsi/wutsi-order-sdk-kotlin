@@ -6,7 +6,7 @@
 
   <artifactId>wutsi-order-sdk-kotlin</artifactId>
   <groupId>com.wutsi.ecommerce.order</groupId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
 
   <name>wutsi-order-sdk-kotlin</name>
@@ -54,7 +54,7 @@
 
   <scm>
     <developerConnection>scm:git:https://github.com/wutsi/wutsi-order-sdk-kotlin.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>wutsi-order-sdk-kotlin-0.0.1</tag>
   </scm>
   <distributionManagement>
     <repository>
