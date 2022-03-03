@@ -23,5 +23,5 @@ public data class Order(
   public val shippingId: Long? = null,
   public val deliveryFees: Double = 0.0,
   public val expectedDelivered: OffsetDateTime? = null,
-  public val shippingAddress: Address = Address()
+  public val shippingAddress: Address? = null
 )
