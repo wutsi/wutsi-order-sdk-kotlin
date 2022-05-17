@@ -31,6 +31,10 @@ public interface WutsiOrderApi {
   @Headers(value=["Content-Type: application/json"])
   public fun cancelOrder(@Param("id") id: String): Unit
 
+  @RequestLine("GET /v1/orders/{id}/submit")
+  @Headers(value=["Content-Type: application/json"])
+  public fun submitOrder(@Param("id") id: String): Unit
+
   @RequestLine("POST /v1/orders/{id}/shipping-method")
   @Headers(value=["Content-Type: application/json"])
   public fun setShippingMethod(@Param("id") id: String, request: SetShippingMethodRequest): Unit
