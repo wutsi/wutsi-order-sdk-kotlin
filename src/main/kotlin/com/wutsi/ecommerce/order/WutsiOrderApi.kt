@@ -1,5 +1,6 @@
 package com.wutsi.ecommerce.order
 
+import com.wutsi.ecommerce.order.dto.ChangeStatusRequest
 import com.wutsi.ecommerce.order.dto.CreateOrderRequest
 import com.wutsi.ecommerce.order.dto.CreateOrderResponse
 import com.wutsi.ecommerce.order.dto.GetOrderResponse
@@ -27,14 +28,6 @@ public interface WutsiOrderApi {
   @Headers(value=["Content-Type: application/json"])
   public fun getOrder(@Param("id") id: String): GetOrderResponse
 
-  @RequestLine("DELETE /v1/orders/{id}")
-  @Headers(value=["Content-Type: application/json"])
-  public fun cancelOrder(@Param("id") id: String): Unit
-
-  @RequestLine("GET /v1/orders/{id}/submit")
-  @Headers(value=["Content-Type: application/json"])
-  public fun submitOrder(@Param("id") id: String): Unit
-
   @RequestLine("POST /v1/orders/{id}/shipping-method")
   @Headers(value=["Content-Type: application/json"])
   public fun setShippingMethod(@Param("id") id: String, request: SetShippingMethodRequest): Unit
@@ -42,6 +35,10 @@ public interface WutsiOrderApi {
   @RequestLine("POST /v1/orders/{id}/shipping-address")
   @Headers(value=["Content-Type: application/json"])
   public fun setShippingAddress(@Param("id") id: String, request: SetAddressRequest): Unit
+
+  @RequestLine("POST /v1/orders/{id}/status")
+  @Headers(value=["Content-Type: application/json"])
+  public fun changeStatus(@Param("id") id: String, request: ChangeStatusRequest): Unit
 
   @RequestLine("GET /v1/addresses")
   @Headers(value=["Content-Type: application/json"])

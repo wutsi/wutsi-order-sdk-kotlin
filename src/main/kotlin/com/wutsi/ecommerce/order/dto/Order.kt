@@ -21,7 +21,6 @@ public data class Order(
   public val items: List<OrderItem> = emptyList(),
   public val created: OffsetDateTime = OffsetDateTime.now(),
   public val updated: OffsetDateTime = OffsetDateTime.now(),
-  public val cancelled: OffsetDateTime? = null,
   public val shippingId: Long? = null,
   public val deliveryFees: Double = 0.0,
   public val expectedDelivered: OffsetDateTime? = null,
