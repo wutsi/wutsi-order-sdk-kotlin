@@ -5,5 +5,8 @@ enum class OrderStatus {
     OPENED,
     DONE,
     CANCELLED,
-    EXPIRED
+    EXPIRED,
+    READY_FOR_PICKUP,
+    IN_TRANSIT,
+    DELIVERED,
 }

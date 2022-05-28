@@ -9,7 +9,6 @@ import com.wutsi.ecommerce.order.dto.SearchOrderRequest
 import com.wutsi.ecommerce.order.dto.SearchOrderResponse
 import com.wutsi.ecommerce.order.dto.SetAddressRequest
 import com.wutsi.ecommerce.order.dto.SetShippingMethodRequest
-import com.wutsi.ecommerce.order.dto.SetShippingOrderRequest
 import feign.Headers
 import feign.Param
 import feign.RequestLine
@@ -28,10 +27,6 @@ public interface WutsiOrderApi {
   @RequestLine("GET /v1/orders/{id}")
   @Headers(value=["Content-Type: application/json"])
   public fun getOrder(@Param("id") id: String): GetOrderResponse
-
-  @RequestLine("POST /v1/orders/{id}/shipping-order")
-  @Headers(value=["Content-Type: application/json"])
-  public fun setShippingOrder(@Param("id") id: String, request: SetShippingOrderRequest): Unit
 
   @RequestLine("POST /v1/orders/{id}/shipping-method")
   @Headers(value=["Content-Type: application/json"])
