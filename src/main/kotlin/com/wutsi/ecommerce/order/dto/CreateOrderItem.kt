@@ -5,5 +5,5 @@ import kotlin.Long
 
 public data class CreateOrderItem(
   public val productId: Long = 0,
-  public val quantity: Int = 0
+  public val quantity: Int = 0,
 )

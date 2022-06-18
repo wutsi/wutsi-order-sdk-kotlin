@@ -19,5 +19,5 @@ public data class OrderSummary(
   public val totalPaid: Double = 0.0,
   public val currency: String = "",
   public val created: OffsetDateTime = OffsetDateTime.now(),
-  public val updated: OffsetDateTime = OffsetDateTime.now()
+  public val updated: OffsetDateTime = OffsetDateTime.now(),
 )
