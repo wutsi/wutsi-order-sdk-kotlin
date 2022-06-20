@@ -1,6 +1,8 @@
 package com.wutsi.ecommerce.order
 
 import com.wutsi.ecommerce.order.dto.ChangeStatusRequest
+import com.wutsi.ecommerce.order.dto.CreateAddressRequest
+import com.wutsi.ecommerce.order.dto.CreateAddressResponse
 import com.wutsi.ecommerce.order.dto.CreateOrderRequest
 import com.wutsi.ecommerce.order.dto.CreateOrderResponse
 import com.wutsi.ecommerce.order.dto.GetOrderResponse
@@ -40,7 +42,11 @@ public interface WutsiOrderApi {
   @Headers(value=["Content-Type: application/json"])
   public fun changeStatus(@Param("id") id: String, request: ChangeStatusRequest): Unit
 
-  @RequestLine("GET /v1/addresses")
+  @RequestLine("GET /v1/addresses?type={type}")
   @Headers(value=["Content-Type: application/json"])
-  public fun listAddresses(): ListAddressResponse
+  public fun listAddresses(@Param("type") type: String? = null): ListAddressResponse
+
+  @RequestLine("POST /v1/addresses")
+  @Headers(value=["Content-Type: application/json"])
+  public fun createAddress(request: CreateAddressRequest): CreateAddressResponse
 }
